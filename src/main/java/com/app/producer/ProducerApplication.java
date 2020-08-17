@@ -40,7 +40,7 @@ public class ProducerApplication {
 
     }
 
-    @Scheduled(fixedRate = 2000)
+    @Scheduled(fixedRate = 10000)
     public void sendMessage() {
         List<Message> messages = AlarmType.getDbTypes().stream()
                                           .map(name -> new Message(Instant.now().getEpochSecond(), name, getRandomNumberInRange(1, 10)))
